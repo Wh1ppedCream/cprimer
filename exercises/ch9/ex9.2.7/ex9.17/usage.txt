@@ -1,0 +1,2 @@
+c1 and c2 must be of the same type of container and their constituant type must allow the < and > operators	
+c1 and c2 must also not be unordered associative containers

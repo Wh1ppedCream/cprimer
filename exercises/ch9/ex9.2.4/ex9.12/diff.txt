@@ -1,0 +1,6 @@
+container: copies the contents of the entire container to the mentioned container. Assumes container and element
+ types to be identical
+
+two iterators: copies the range of values between the two iterators (including first, but excluding last) to the 
+mentioned container. Does not require types to be identical. Element types may differ as long as conversion is 
+possible.

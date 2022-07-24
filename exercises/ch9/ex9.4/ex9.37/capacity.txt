@@ -1,0 +1,5 @@
+lists are not contiguous, meaning that the individual elements are not guaranteed to be located next to each other
+	in memory. This means that memory can be appended on randomly, and it does not require pre-allocated memory,
+	like vectors or strings.
+
+arrays have fixed amounts of size, so they do not need speerately defined capacity functions;

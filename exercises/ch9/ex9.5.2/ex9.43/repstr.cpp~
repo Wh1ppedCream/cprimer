@@ -15,8 +15,8 @@ void val_rep(string &s, string &oldval, string &newval) {
 	cout << "old string: " << s << endl;
 
 	auto iter = s.begin();
-	int oldsiz = oldval.size();
-	int newsiz = newval.size();
+	auto oldsiz = oldval.size();
+	auto newsiz = newval.size();
 	string str(s.begin(), s.begin() + oldsiz);
 	while (iter != s.end()) {
 		if (str == oldval) {

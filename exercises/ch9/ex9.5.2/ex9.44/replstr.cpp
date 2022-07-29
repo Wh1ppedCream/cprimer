@@ -6,13 +6,12 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-void strchange(string &s, string &oldval, string &newval) {
+void strchange(string &s, const string &oldval, const string &newval) {
 	int oldlen = oldval.size();
-	if (s.empty() || oldval.empty() || s.size() < oldlen) return;
+	if (s.empty() || oldval.empty() || s.size() < oldval.size()) return;
 	cout << "the original string is: " << s << endl;
-	int newlen = newval.size();
 	auto iter = s.begin();
-	string str(s, iter, oldlen);
+	string str(iter, iter + oldlen);
 	iter += oldlen;
 
 	while (iter != s.end()) {

@@ -1,0 +1,2 @@
+Algorithms do not add or remove elements from containers. They only can change existing elements.
+Also algorithms do not act on the containers themselves. They operate on iterators.

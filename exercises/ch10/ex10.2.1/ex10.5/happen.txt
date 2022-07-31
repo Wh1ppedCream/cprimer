@@ -1,0 +1,2 @@
+if they both held cstyle strings, the answer would be completely different, as iterators to cstyle strings behave
+differently then to std::string's

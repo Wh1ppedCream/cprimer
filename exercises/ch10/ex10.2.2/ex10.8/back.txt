@@ -1,0 +1,1 @@
+back_inserter is an inserting tool in the <iterator> header, instead of an algorithm in the <algorithm> header

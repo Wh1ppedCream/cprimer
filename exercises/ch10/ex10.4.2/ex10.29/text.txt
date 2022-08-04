@@ -1,0 +1,6 @@
+Even though the iostream types are not containers, there are iterators that can
+be used with objects of the IO types (§ 8.1, p. 310). An istream_iterator (Ta-
+ble 10.3 (overleaf)) reads an input stream, and an ostream_iterator (Table 10.4
+(p. 405)) writes an output stream. These iterators treat their corresponding stream
+as a sequence of elements of a specified type. Using a stream iterator, we can use
+the generic algorithms to read data from or write data to stream objects.

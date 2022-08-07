@@ -5,6 +5,7 @@
 #include <list>
 #include <iostream>
 #include <string>
+#include <sstream>
 #include <algorithm>
 
 using std::string;
@@ -16,15 +17,21 @@ using std::endl;
 int main()
 {
 	std::map<string, list<int>> assoc;
-	string word;
-	int line = 1;
-	while (cin >> word) {
-		if (word == "\n") {
-			++line;
-			continue;
+	string word, line;
+	int count_l = 0;
+	while (getline(cin, line)) {
+		++count_l;
+		std::istringstream curr(line);
 
-		} else {
-		(assoc[word]).push_back(line);
+
+		while (curr >> word) {
+			auto &r = assoc[word];
+
+			if (find(r.begin(), r.end(), count_l) == r.end()) {
+				r.push_back(count_l);
+			} else {
+				continue;
+			}
 		}
 	}
 	for (auto &v : assoc) {

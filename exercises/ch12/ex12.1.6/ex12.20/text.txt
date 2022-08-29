@@ -1,0 +1,10 @@
+The new and delete operators allocate objects one at a time. Some applications,
+need the ability to allocate storage for many objects at once. For example, vectors
+and strings store their elements in contiguous memory and must allocate several
+elements at once whenever the container has to be reallocated (§ 9.4, p. 355).
+To support such usage, the language and library provide two ways to allocate
+an array of objects at once. The language defines a second kind of new expression
+that allocates and initializes an array of objects. The library includes a template
+class named allocator that lets us separate allocation from initialization. For
+reasons we’ll explain in § 12.2.2 (p. 481), using an allocator generally provides
+better performance and more flexible memory management

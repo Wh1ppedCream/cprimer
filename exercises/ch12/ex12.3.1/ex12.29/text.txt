@@ -1,0 +1,13 @@
+We’ll start by defining our TextQuery class. The user will create objects of this
+class by supplying an istream from which to read the input file. This class also
+provides the query operation that will take a string and return a QueryResult
+representing the lines on which that string appears.
+The data members of the class have to take into account the intended sharing
+with QueryResult objects. The QueryResult class will share the vector repre-
+senting the input file and the sets that hold the line numbers associated with each
+word in the input. Hence, our class has two data members: a shared_ptr to a
+dynamically allocated vector that holds the input file, and a map from string to
+shared_ptr<set>. The map associates each word in the file with a dynamically
+allocated set that holds the line numbers on which that word appears.
+To make our code a bit easier to read, we’ll also define a type member (§ 7.3.1,
+p. 271) to refer to line numbers, which are indices into a vector of strings:

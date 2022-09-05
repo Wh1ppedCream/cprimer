@@ -1,0 +1,16 @@
+We use the size of the set to which the qr.lines points to report how many
+matches were found. Because that set is in a shared_ptr, we have to remember
+to dereference lines. We call make_plural (§ 6.3.2, p. 224) to print time or
+times, depending on whether that size is equal to 1.
+In the for we iterate through the set to which lines points. The body of
+the for prints the line number, adjusted to use human-friendly counting. The
+numbers in the set are indices of elements in the vector, which are numbered
+from zero. However, most users think of the first line as line number 1, so we
+systematically add 1 to the line numbers to convert to this more common notation.
+We use the line number to fetch a line from the vector to which file points.
+Recall that when we add a number to an iterator, we get the element that many
+elements further into the vector (§ 3.4.2, p. 111). Thus, file->begin() + num
+is the numth element after the start of the vector to which file points.
+Note that this function correctly handles the case that the word is not found. In
+this case, the set will be empty. The first output statement will note that the word
+occurred 0 times. Because *res.lines is empty. the for loop won’t be executed.

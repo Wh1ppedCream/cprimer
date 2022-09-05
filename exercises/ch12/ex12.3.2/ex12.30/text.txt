@@ -1,0 +1,15 @@
+The constructor initializer allocates a new vector to hold the text from the input
+file. We use getline to read the file a line at a time and push each line onto the
+vector. Because file is a shared_ptr, we use the -> operator to dereference
+file to fetch the push_back member of the vector to which file points.
+Next we use an istringstream (§ 8.3, p. 321) to process each word in the
+line we just read. The inner while uses the istringstream input operator to
+read each word from the current line into word. Inside the while, we use the map
+subscript operator to fetch the shared_ptr<set> associated with word and bind
+lines to that pointer. Note that lines is a reference, so changes made to lines
+will be made to the element in wm.
+If word wasn’t in the map, the subscript operator adds word to wm (§ 11.3.4,
+p. 435). The element associated with word is value initialized, which means that
+lines will be a null pointer if the subscript operator added word to wm. If lines
+is null, we allocate a new set and call reset to update the shared_ptr to which
+lines refers to point to this newly allocated set.
